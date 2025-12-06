@@ -4,7 +4,7 @@ icon: fas fa-user
 order: 6
 ---
 
-안녕하세요, **imsang27**입니다.
+안녕하세요, <b>[imsang27](https://github.com/imsang27)</b>입니다.
 
 소프트웨어학과에 재학 중인 개발자입니다.
 
