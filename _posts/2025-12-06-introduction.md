@@ -1,6 +1,6 @@
 ---
 title: 블로그 소개
-date: 2025-12-07 00:00:00 +0900
+date: 2025-12-06 21:55:43 +0900
 categories: [Blog]
 tags: [intro]
 pin: true

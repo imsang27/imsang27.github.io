@@ -1,6 +1,6 @@
 ---
 title: 사이트 개편 기록
-date: 2025-12-05 21:00:00 +0900
+date: 2025-12-05 22:22:03 +0900
 categories: [Blog]
 tags: [log, update]
 ---
