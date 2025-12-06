@@ -1,8 +1,8 @@
 ---
 title: 사이트 개편 기록
 date: 2025-12-05 22:22:03 +0900
-categories: [Blog]
-tags: [log, update]
+categories: [Blog, Log]
+tags: [log, Update]
 ---
 
 오늘 GitHub Pages에 홈 화면을 개편했다.
