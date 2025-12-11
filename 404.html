@@ -373,14 +373,61 @@
 
             <!-- return -->
 
-            <article class="px-1">
-              <h1 class="dynamic-title">404: Page not found</h1>
-              <div class="content">
-                <p class="lead">
-                  Sorry, we've misplaced that URL or it's pointing to something
-                  that doesn't exist.
-                </p>
-              </div>
+            <article
+              class="px-1"
+              style="text-align: center; padding-top: 120px"
+            >
+              <div class="void-node"></div>
+
+              <h1
+                style="
+                  font-weight: 300;
+                  color: rgba(255, 255, 255, 0.7);
+                  margin-top: 30px;
+                "
+              >
+                여기는 어떤 것과도 연결되지 않은, 고립된 무(無)의 공간입니다.
+              </h1>
+
+              <p style="color: rgba(255, 255, 255, 0.45); margin-top: 10px">
+                당신이 찾으려던 지식의 흔적은 이곳에 존재하지 않습니다.
+              </p>
+
+              <p style="margin-top: 35px">
+                <a
+                  href="/"
+                  style="
+                    color: rgba(255, 255, 255, 0.6);
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+                    text-decoration: none;
+                  "
+                >
+                  연결의 세계로 돌아가기
+                </a>
+              </p>
+
+              <style>
+                .void-node {
+                  width: 8px;
+                  height: 8px;
+                  background: rgba(255, 255, 255, 0.75);
+                  border-radius: 50%;
+                  margin: 0 auto;
+                  animation: drift 7s ease-in-out infinite alternate;
+                  filter: blur(1px);
+                }
+
+                @keyframes drift {
+                  0% {
+                    transform: translate(0, 0) scale(1);
+                    opacity: 0.8;
+                  }
+                  100% {
+                    transform: translate(25px, -35px) scale(1.6);
+                    opacity: 0.3;
+                  }
+                }
+              </style>
             </article>
           </main>
 
