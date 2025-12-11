@@ -373,61 +373,217 @@
 
             <!-- return -->
 
-            <article
-              class="px-1"
-              style="text-align: center; padding-top: 120px"
-            >
-              <div class="void-node"></div>
+            <article class="px-1 space-404">
+              <canvas id="space-canvas"></canvas>
 
-              <h1
-                style="
-                  font-weight: 300;
-                  color: rgba(255, 255, 255, 0.7);
-                  margin-top: 30px;
-                "
-              >
-                여기는 어떤 것과도 연결되지 않은, 고립된 무(無)의 공간입니다.
-              </h1>
+              <div class="space-404-container">
+                <div class="space-404-node"></div>
 
-              <p style="color: rgba(255, 255, 255, 0.45); margin-top: 10px">
-                당신이 찾으려던 지식의 흔적은 이곳에 존재하지 않습니다.
-              </p>
+                <h1 class="space-404-title">
+                  여기는 어떤 생각과도 연결되지 않은<br />
+                  고립된 무(無)의 공간입니다.
+                </h1>
 
-              <p style="margin-top: 35px">
-                <a
-                  href="/"
-                  style="
-                    color: rgba(255, 255, 255, 0.6);
-                    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-                    text-decoration: none;
-                  "
-                >
-                  연결의 세계로 돌아가기
-                </a>
-              </p>
+                <p class="space-404-text">
+                  당신이 찾으려 했던 지식의 조각은<br />
+                  이 우주 어딘가에는 있을지 모르지만, 적어도 이 좌표에는
+                  없습니다.
+                </p>
+
+                <p class="space-404-link">
+                  <a href="/">연결이 존재하는 곳으로 돌아가기</a>
+                </p>
+              </div>
 
               <style>
-                .void-node {
-                  width: 8px;
-                  height: 8px;
-                  background: rgba(255, 255, 255, 0.75);
-                  border-radius: 50%;
-                  margin: 0 auto;
-                  animation: drift 7s ease-in-out infinite alternate;
-                  filter: blur(1px);
+                /* 전체 404 페이지를 어두운 우주 톤으로 */
+                body {
+                  background: radial-gradient(
+                    circle at top,
+                    #101320 0,
+                    #05060a 55%,
+                    #020308 100%
+                  ) !important;
+                  color: rgba(255, 255, 255, 0.8);
                 }
 
-                @keyframes drift {
+                .space-404 {
+                  position: relative;
+                  min-height: calc(100vh - 120px);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  overflow: hidden;
+                }
+
+                /* 별이 그려질 캔버스 */
+                #space-canvas {
+                  position: fixed;
+                  inset: 0;
+                  width: 100%;
+                  height: 100%;
+                  display: block;
+                  z-index: -1;
+                }
+
+                .space-404-container {
+                  position: relative;
+                  text-align: center;
+                  padding: 3rem 1.5rem;
+                  max-width: 720px;
+                  margin: 0 auto;
+                  backdrop-filter: blur(6px);
+                  background: radial-gradient(
+                    circle at top,
+                    rgba(40, 60, 100, 0.18),
+                    rgba(5, 5, 10, 0.75)
+                  );
+                  border-radius: 24px;
+                  border: 1px solid rgba(120, 160, 255, 0.18);
+                  box-shadow: 0 0 60px rgba(0, 0, 0, 0.75);
+                }
+
+                /* 중심에 떠 있는 고립된 노드 */
+                .space-404-node {
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  margin: 0 auto 20px;
+                  background: radial-gradient(
+                    circle,
+                    #ffffff 0,
+                    #93c5ff 35%,
+                    rgba(147, 197, 255, 0) 70%
+                  );
+                  box-shadow: 0 0 12px rgba(147, 197, 255, 0.8),
+                    0 0 32px rgba(59, 130, 246, 0.65);
+                  animation: node-float 7s ease-in-out infinite alternate;
+                }
+
+                @keyframes node-float {
                   0% {
-                    transform: translate(0, 0) scale(1);
-                    opacity: 0.8;
+                    transform: translate(-4px, 2px) scale(1);
+                    opacity: 0.95;
                   }
                   100% {
-                    transform: translate(25px, -35px) scale(1.6);
-                    opacity: 0.3;
+                    transform: translate(8px, -10px) scale(1.35);
+                    opacity: 0.6;
+                  }
+                }
+
+                .space-404-title {
+                  font-weight: 300;
+                  font-size: 1.9rem;
+                  line-height: 1.4;
+                  margin-bottom: 1.2rem;
+                  color: rgba(255, 255, 255, 0.9);
+                }
+
+                .space-404-text {
+                  font-size: 0.98rem;
+                  line-height: 1.7;
+                  color: rgba(220, 230, 255, 0.72);
+                  margin-bottom: 2.2rem;
+                }
+
+                .space-404-link a {
+                  font-size: 0.95rem;
+                  color: rgba(191, 219, 254, 0.92);
+                  text-decoration: none;
+                  border-bottom: 1px solid rgba(191, 219, 254, 0.45);
+                  padding-bottom: 2px;
+                  transition: all 0.2s ease;
+                }
+
+                .space-404-link a:hover {
+                  color: #ffffff;
+                  border-bottom-color: #ffffff;
+                  text-shadow: 0 0 12px rgba(191, 219, 254, 0.7);
+                }
+
+                /* 반응형 */
+                @media (max-width: 768px) {
+                  .space-404-container {
+                    padding: 2.3rem 1.3rem;
+                    margin-inline: 0.5rem;
+                  }
+                  .space-404-title {
+                    font-size: 1.5rem;
+                  }
+                  .space-404-text {
+                    font-size: 0.9rem;
                   }
                 }
               </style>
+
+              <script>
+                (function () {
+                  const canvas = document.getElementById("space-canvas");
+                  if (!canvas) return;
+
+                  const ctx = canvas.getContext("2d");
+                  let stars = [];
+                  let width, height;
+                  const STAR_COUNT = 140;
+
+                  function resize() {
+                    width = canvas.width = window.innerWidth;
+                    height = canvas.height = window.innerHeight;
+                  }
+
+                  function initStars() {
+                    stars = [];
+                    for (let i = 0; i < STAR_COUNT; i++) {
+                      stars.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        z: Math.random() * 0.8 + 0.2, // 깊이감
+                        r: Math.random() * 1.1 + 0.2,
+                        driftX: (Math.random() - 0.5) * 0.06,
+                        driftY: (Math.random() - 0.5) * 0.08
+                      });
+                    }
+                  }
+
+                  function draw() {
+                    ctx.clearRect(0, 0, width, height);
+
+                    for (const s of stars) {
+                      const alpha = 0.25 + s.z * 0.6;
+                      ctx.beginPath();
+                      ctx.fillStyle = "rgba(199, 210, 254," + alpha + ")";
+                      ctx.arc(s.x, s.y, s.r * s.z * 1.5, 0, Math.PI * 2);
+                      ctx.fill();
+
+                      // 미세한 이동 (우주에 둥둥 떠다니는 느낌)
+                      s.x += s.driftX;
+                      s.y += s.driftY;
+
+                      // 아주 천천히 z 변화 (깊이감)
+                      s.z += (Math.random() - 0.5) * 0.004;
+                      if (s.z < 0.2) s.z = 0.2;
+                      if (s.z > 1.0) s.z = 1.0;
+
+                      // 화면 밖으로 나가면 다시 투입
+                      if (s.x < -10) s.x = width + 10;
+                      if (s.x > width + 10) s.x = -10;
+                      if (s.y < -10) s.y = height + 10;
+                      if (s.y > height + 10) s.y = -10;
+                    }
+
+                    requestAnimationFrame(draw);
+                  }
+
+                  window.addEventListener("resize", () => {
+                    resize();
+                    initStars();
+                  });
+
+                  resize();
+                  initStars();
+                  draw();
+                })();
+              </script>
             </article>
           </main>
 
